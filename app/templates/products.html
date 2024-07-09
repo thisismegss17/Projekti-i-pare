@@ -1,0 +1,52 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/products.css' %}"> {% endblock %}
+
+{% block content %}
+
+
+ <div class="imazhipare">
+    <img src="images/produktfirstimg.webp" alt="fillimfoto"> 
+ </div>
+ <section class="tegjithaproduktet">
+   <div>
+    <div class="collection-header page-width">
+        <h1>Shop All</h1>>
+   </div>
+  <div class="koleksioni">
+    <div class="kontent">
+        <img src="{{product.product_image.url}}">
+        <h3>{{product.product_name}}</h3>
+        <p>{{product.product_description}}</p>
+        <h6>$45.00</h6>
+        <ul> <div class="imazhipare">
+          <img src="images/produktfirstimg.webp" alt="fillimfoto"> 
+       </div>
+       <section class="tegjithaproduktet">
+         <div>
+          <div class="collection-header page-width">
+              <h1>Shop All</h1>
+         </div>
+        <div class="koleksioni">
+          {% for product in products %}
+          <div class="kontent">
+            <img src={{product.product_image.url}}>
+            <h4>{{product.product_name }}</h4>
+            <p>{{product.product_description}}</p>
+            <h6>{{product.product_price}}</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
+            <button class="buy-1">Buy Now</button>
+        </div>
+        {% endfor %}
+        </div>
+        </div>
+        </section>
+
+    <script src="js/products.js"></script>
+    {% endblock %}

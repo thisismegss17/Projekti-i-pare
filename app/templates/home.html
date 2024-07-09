@@ -1,0 +1,249 @@
+{% extends 'index.html'%}
+{% load static%}
+{% block style %}     <link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
+{% block content %}
+
+    <!-- header-->
+<div class="women">
+  <video class="bg-vid"src="{% static 'images/video.mp4' %}" class="d-block w-100" muted autoplay loop ></video>
+<div class="women-text">
+    <h1>Meet Pretty in Meg</h1>
+    <p>Beauty that gets you to the fullest.</p>
+</div>
+</div>
+    <!--fund header-->
+    <!--nis karoseli-->
+    <div class="shop-by-category">
+      <div class="shop-by-category__cas">
+          <h3 class="label">Shop By Category</h3>
+          <a class="label emphasized" href="/collections/all" alt="Shop All">Shop All</a>
+      </div>
+    </div>
+  <div class="card-group">
+    <div class="card">
+      <img src="{% static 'images/brows.webp' %}" class="card-img-top" alt="vetullat">
+      <div class="card-body">
+        <h5 class="card-title">Eyebrows</h5>
+        <p class="card-text">The one thing you can get into shape without exercising.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/lips.webp' %}" class="card-img-top" alt="lips">
+      <div class="card-body">
+        <h5 class="card-title">Lipstick</h5>
+        <p class="card-text">Lipstick in one hand, confidence on the other.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/facee.webp' %}" class="card-img-top" alt="facee">
+      <div class="card-body">
+        <h5 class="card-title">Face</h5>
+        <p class="card-text">All women are pretty without makeup , but with the right makeup they can be pretty powerful.</p>
+      </div>
+    </div>
+  </div>
+    <!--fund karoseli-->
+    <!--shprehja-->
+      <div class="container">
+      <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-8 text-center">
+      <h2 class="display-4 fw-bold mb-4">Proffesional Products</h2>
+      <figure class="text-center mb-5">
+      <blockquote class="blockquote">
+      <p class="text-muted">“Glow is the essence of beauty.”</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+      <cite class="text-muted">Estee Lauder</cite>
+      </figcaption>
+      </figure>
+      </div>
+      </div>
+      </div>
+      <!--fund shprehje-->
+      <!--produket-->
+      <section class="products" id="products">
+     <div class="product-card">
+      <div class="discount">-10%</div>
+      <img src="{% static 'images/primer.webp' %}" alt="Primer by ELF" class="product-image">
+      <div class="product-info">
+          <h2 class="product-name">Primer by ELF</h2>
+          <p class="product-price">
+              <span class="current-price">$13.00</span>
+              <span class="original-price">$25.00</span>
+          </p>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+  </div>
+
+  <div class="product-card">
+    <div class="discount">-5%</div>
+    <img src="{% static 'images/foundation.webp' %}" alt="Foundation by Fenty Beauty" class="product-image">
+    <div class="product-info">
+        <h2 class="product-name">Foundation by Fenty Beauty</h2>
+        <p class="product-price">
+            <span class="current-price">$38.00</span>
+            <span class="original-price">$42.00</span>
+        </p>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+  <div class="discount">-5%</div>
+  <img src="{% static 'images/concealer.webp' %}" alt="Concealer by NARS" class="product-image">
+  <div class="product-info">
+      <h2 class="product-name">Concealer by NARS</h2>
+      <p class="product-price">
+          <span class="current-price">$28.00</span>
+          <span class="original-price">$32.00</span>
+      </p>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="discount">-10%</div>
+  <img src="{% static 'images/contour.webp' %}" alt="Contour by ELF" class="product-image">
+  <div class="product-info">
+      <h2 class="product-name">Contour by ELF</h2>
+      <p class="product-price">
+          <span class="current-price">$13.00</span>
+          <span class="original-price">$25.00</span>
+      </p>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="discount">-5%</div>
+  <img src="{% static 'images/blush.webp' %}" alt="Blush by Rare Beauty" class="product-image">
+  <div class="product-info">
+      <h2 class="product-name">Blush by Rare Beauty</h2>
+      <p class="product-price">
+          <span class="current-price">$23.75</span>
+          <span class="original-price">$28.00</span>
+      </p>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="discount">-10%</div>
+  <img src="{% static 'images/settingspray.webp' %}" alt="Setting Spray by Urban Decay" class="product-image">
+  <div class="product-info">
+      <h2 class="product-name">Setting Spray by Urban Decay</h2>
+      <p class="product-price">
+          <span class="current-price">$13.00</span>
+          <span class="original-price">$25.00</span>
+      </p>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+</div>
+</section>
+       <!--seksioni i ikonave-->
+       <section class="icons-container">
+        <div class="icons">
+          <img src="{% static 'images/delivery.webp' %}">
+          <div class="info">
+           <h3>Free delivery</h3>
+           <span>on all orders</span>
+          </div>
+        </div>
+        <div class="icons">
+          <img src="{% static 'images/money.webp' %}">
+          <div class="info">
+           <h3>10 days returns</h3>
+           <span>moneyback guarantee</span>
+          </div>
+        </div>
+        <div class="icons">
+          <img src="{% static 'images/gift.webp' %}">
+          <div class="info">
+           <h3>Offer & gifts</h3>
+           <span>on all orders</span>
+          </div>
+        </div>
+        <div class="icons">
+          <img src="{% static 'images/creditcard.webp' %}">
+          <div class="info">
+           <h3>Secure payments</h3>
+           <span>protected by paypal</span>
+          </div>
+        </div>
+       </section>
+       <!--fund ikonash-->
+<!--reviewt-->
+<section class="review" id="review">
+  <h1 class="heading">Costumer's <span>Review</span></h1>
+  <div class="box-container">
+    <div class="box">
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p>Exciting makeup brand with a fantastic message!
+        The products are really good quality and the pigment is insanely good! 
+        The blushes will last you forever with that pigment as you only need a bit to have a glowing look.
+        I've never had a problem ordering from the brand or other external sites and I'm always happy with the products when I try them out!
+        Definitely would recommend it to anyone looking for a high quality makeup brand with crazy good pigment and stands for a positive message.</p>
+        <div class="user">
+          <img src="{% static 'images/costumer1.webp' %}" alt="img">
+          <div class="user-info">
+            <h3>Ilona Dovey</h3>
+            <span>Happy Costumer</span>
+          </div>
+        </div>
+        <span class="fas fa-qoute-right"></span>
+    </div>
+  <div class="box">
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+    <p>I ordered the Fenty Skin products twice now and on both occasions I had a fantastic experience. 
+      Products arrive quickly (within a week from USA). My first order had a faulty face wash bottle. 
+      I emailed about it and got refunded within 20min of sending the email!! 
+      Can't fault them at all.</p>
+      <div class="user">
+        <img src="{% static 'images/costumer2.webp' %}" alt="img">
+        <div class="user-info">
+          <h3>Harley Smith</h3>
+          <span>Happy Costumer</span>
+        </div>
+      </div>
+      <span class="fas fa-qoute-right"></span>
+  </div>
+<div class="box">
+  <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+  <p>I simply Love e.l.f. cosmetics!!..I like to do natural glam looks and their products are great for that!
+    The Pigmentation on the eyeshadows are unbelievably good.
+    Especially at low-affordable price points.</p>
+    <div class="user">
+      <img src="{% static 'images/costumer3.webp' %}" alt="img">
+      <div class="user-info">
+        <h3>Ana Carvey</h3>
+        <span>Happy Costumer</span>
+      </div>
+    </div>
+    <span class="fas fa-qoute-right"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--fund review-->
+
+
+{% endblock %}

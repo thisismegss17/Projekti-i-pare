@@ -1,0 +1,46 @@
+{% load static %}
+{% block content %}
+
+<!-- nis navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Pretty in Meg</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item" id="navv">
+            <a class="nav-link active text-white" aria-current="page" href="{% url 'homePage' %}">Home</a>
+          </li>
+          <li class="nav-item" id="navv">
+            <a class="nav-link active text-white" href="{% url 'aboutPage' %}">About</a>
+          </li>
+          <li class="nav-item" id="navv">
+            <a class="nav-link active text-white" href="{% url 'productPage' %}">Products</a>
+          </li>
+          <li class="nav-contact" id="navv">
+            <a class="nav-link active text-white" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item dropdown" id="navv">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Makeup</a></li>
+              <li><a class="dropdown-item" href="#">Brushes</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Skin care</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button type="button" class="btn btn-light">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!-- fund navbar-->
+
+{% endblock %}
