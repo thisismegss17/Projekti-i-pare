@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="css/contact.css">
-</head>
-<body>
-    
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="js/contact.js"></script>
-</body>
-</html>
+{% extends 'index.html'%}
+{% load static%}
+
+{% block content %}
+    <!--nis forma-->
+    <form class="mt-5 pt-5" method="POST">
+        {% csrf_token %}
+    <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" name="firstname">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" name="lastname">
+        <label for="email" class="form-label">E-mail Adress</label>
+        <input type="email" class="form-control" id="email" name="email">
+        <label for="comment" class="form-label">Comment</label>
+        <input type="text" class="form-control" id="comment" name="comment">
+        <input type="submit" value="Send" class="btn btn-success">
+    </div>
+    </form>
+    <div class="alert sms" role="alert">
+    </div>
+{% endblock %}

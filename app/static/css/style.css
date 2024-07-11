@@ -167,9 +167,11 @@ body{
 }
 /*produktet*/
 
+/* Heqja e flex-direction */
 .products{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
 .product-card {
     align-items: center;
