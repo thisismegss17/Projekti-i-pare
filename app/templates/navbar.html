@@ -1,5 +1,5 @@
 {% load static %}
-{% block content %}
+
 
 <!-- nis navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -21,16 +21,15 @@
             <a class="nav-link active text-white" href="{% url 'productPage' %}">Products</a>
           </li>
           <li class="nav-contact" id="navv">
-            <a class="nav-link active text-white" href="contact.html">Contact</a>
+            <a class="nav-link active text-white" href="{% url 'contactPage' %}">Contact</a>
           </li>
           <li class="nav-item dropdown" id="navv">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Category</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Makeup</a></li>
-              <li><a class="dropdown-item" href="#">Brushes</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Skin care</a></li>
+              {% for category in kategories %}
+              <li><a class="dropdown-item" href="{% url 'detailkategoriPage' category.kategori_slug %}">{{category.kategori_name}}a></li>
+                {% endfor %}
             </ul>
           </li>
         </ul>
@@ -42,5 +41,3 @@
     </div>
   </nav>
 <!-- fund navbar-->
-
-{% endblock %}
