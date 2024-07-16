@@ -1,11 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'index.html'%}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}"> {% endblock %}
+
+{% block content %}
+<section class="tegjithaproduktet">
+    <div class="imazhipare">
+      <img src="{% static 'images/produktfirstimg.webp' %}" alt="fillimfoto">
+    </div>
+    <div class="collection-header page-width">
+      <h1>Shop All</h1>
+    </div>
+    <div class="koleksioni">
+      {% for product in products %}
+      <div class="product">
+        <img src="{{product.product_image.url}}" alt="text">
+        <h4>{{product.product_name }}</h4>
+        <p>{{product.product_description}}</p>
+        <h6>{{product.product_price}}</h6>
+        <ul>
+          <li><i class="fa fa-star checked"></i></li>
+          <li><i class="fa fa-star checked"></i></li>
+          <li><i class="fa fa-star checked"></i></li>
+          <li><i class="fa fa-star checked"></i></li>
+          <li><i class="fa fa-star"></i></li>
+        </ul>
+        <a href="{% url 'detailproductPage' product.pk %}" class="">Buy Now</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% block script %}
+  <script src="{% static 'javascript/products.js' %}"></script>
+  {% endblock %}
+  {% endblock %}
