@@ -1,6 +1,6 @@
 {% extends 'index.html'%}
 {% load static%}
-
+{% block style %}   <link rel="stylesheet" href="{% static 'css/contact.css' %}"> {% endblock %}
 {% block content %}
     <!--nis forma-->
     <form class="mt-5 pt-5" method="POST">
@@ -17,6 +17,16 @@
         <input type="submit" value="Send" class="btn btn-success">
     </div>
     </form>
-    <div class="alert sms" role="alert">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} {% if message.tags == 'error'%} btn-danger-subtle text-emphasis-danger {% endif %}" role="alert">
+        {{ message }}
     </div>
+    {% endfor %}
+
+   
+   
+
+{% endif %}
 {% endblock %}
