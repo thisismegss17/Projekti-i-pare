@@ -1,7 +1,7 @@
 {% extends 'index.html'%}
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/products.css' %}"> {% endblock %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
 
 {% block content %}
 <section class="tegjithaproduktet">
@@ -18,7 +18,6 @@
     <div class="product">
       <img src="{{product.product_image.url}}" alt="text">
       <h4>{{product.product_name }}</h4>
-      
       <h6>${{product.product_price}}</h6>
       <ul>
         <li><i class="fa fa-star checked"></i></li>

@@ -1,16 +1,123 @@
 {% extends 'index.html'%}
 {% load static%}
-{% block style %}   <link rel="stylesheet" href="{% static 'css/products.css' %}"> {% endblock %}
+{% block style %}   <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Msooo</h1>
-                <h2>ehaaa</h2>
-            </div>
-            
+<!-- header-->
+    <section class="hero">
+        <div class="women">
+            <img src="{% static 'images/aboutwoman.webp' %}" alt="fotofillimi">
+                <div class="abouttext">
+                <h1>Where <span>Beauty</span> meets <span>Connection</span></h1>
+                <p>Connecting Beauty Services to You...</p>
+                </div>
         </div>
+    </section>
+<!--fund header-->
+<!--3 ikonat-->
+    <section class="services">
+       <div class="service">
+         <img src="{% static 'images/browse.webp' %}" alt="Browse">
+          <h3>Browse The Best in Beauty</h3>
     </div>
+       <div class="service">
+         <img src="{% static 'images/bookappointment.webp' %}" alt="Book">
+          <h3>Book An Appointment</h3>
+    </div>
+    <div class="service">
+        <img src="{% static 'images/reviewicon.webp'%}" alt="Review">
+        <h3>Rate & Review</h3>
+    </div>
+</section>
+<!--fund 3 ikonat-->
+<!-- shpjegime ne vijim-->
+
+<section class="beauty-section0">
+    <div class="image-container">
+        <img src="{% static 'images/imgg11.webp' %}" alt="Beauty Products">
+    </div>
+    <div class="text-container">
+        <h1>Clean, skin-centric beauty.</h1>
+        <p>We believe in skin that looks like skin—and radiance that comes naturally. 
+            With transparency as our guide and color as our vehicle, we challenge the conventions of clean beau
+            ty to create something radically new, through safe, potent formulas that protect and revive your skin.</p>
+    </div>
+</section>
+
+<section class="beauty-section1">
+    <div class="image-container">
+        <img src="{% static 'images/img2.webp'%}" alt="Beauty Products">
+    </div>
+    <div class="text-container">
+        <h1>Skincare-powered makeup.</h1>
+        <p>We see skincare and makeup as one, and early on realized botanicals were not enough. 
+            We strongly believe in SPF, as it is what protects and powers these actives, making them up to 200% more effective.
+             Without it, those skin-saving ingredients deteriorate quickly when exposed to light.
+</section>
+<!--fund shpjegime-->
+<!--pjesa e fundit-->
+<div class="product-showcase">
+    <h1>INSPIRE, EMPOWER AND MAKE ALL WOMEN SEE THE VALUE IN BEAUTY</h1>
+    <section class="product-list">
+        <div class="product-card">
+            <div class="product-icon">
+                <img src="{% static 'images/coscream.webp' %}" alt="Cosmetic Creams">
+            </div>
+            <div class="product-info">
+                <h2>1,250K</h2>
+                <h3>Cosmetic Creams</h3>
+                <p>We are committed to creating a platform where all women can reach their ideal level of beauty.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-icon">
+                <img src="{% static 'images/facialcream.webp' %}" alt="Facial Creams">
+            </div>
+            <div class="product-info">
+                <h2>1,100K</h2>
+                <h3>Facial Creams</h3>
+                <p>Offering a wide selection of modern and trendy cosmetics from around the globe!
+                     You'll find the most popular and sought-after facial products right here!</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-icon">
+                <img src="{% static 'images/antiage.webp' %}" alt="Lipsticks">
+            </div>
+            <div class="product-info">
+                <h2>1,750K</h2>
+                <h3>Anti-Aging Face Care</h3>
+                <p>For normal, dry & mature skin, ultra-light texture, repairs & soothes,improves the elasticity of the skin.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-icon">
+                <img src="{% static 'images/oils.webp' %}" alt="Face Colors">
+            </div>
+            <div class="product-info">
+                <h2>1,200K</h2>
+                <h3>Beauty Oils</h3>
+                <p>For all skin types, gentle, highly intensive formula. Vegan, micellar cleansing technology.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<!--fund pjesa e fundit-->
+<!--shprehja-->
+    <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-8 text-center">
+        <figure class="text-center mb-5">
+        <blockquote class="blockquote">
+        <p class="text-muted">“We believe in better, better is a balance.”</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+        <cite class="text-muted">Pretty in Meg</cite>
+        </figcaption>
+        </figure>
+        </div>
+        </div>
+        </div>
+<!--fund shprehja-->
     
 {% endblock %}

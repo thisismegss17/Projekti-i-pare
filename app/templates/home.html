@@ -2,9 +2,8 @@
 {% load static%}
 {% block style %}     <link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
 {% block content %}
-
-    <!-- header-->
-<div class="women">
+<!-- header-->
+  <div class="women">
   <video class="bg-vid"src="{% static 'images/video.mp4' %}" class="d-block w-100" muted autoplay loop ></video>
 <div class="women-text">
     <h1>Meet Pretty in Meg</h1>
@@ -16,7 +15,7 @@
     <div class="shop-by-category">
       <div class="shop-by-category__cas">
           <h3 class="label">Shop By Category</h3>
-          <a class="label emphasized" href="/collections/all" alt="Shop All">Shop All</a>
+          <a class="label emphasized" href="{% url 'productPage'%}" alt="Shop All">Shop All</a>
       </div>
     </div>
   <div class="card-group">
@@ -62,11 +61,11 @@
       <!--fund shprehje-->
       <!--produket-->
       <section class="products" id="products">
-     <div class="product-card">
+     <div class="product-cards">
       <div class="discount">-10%</div>
       <img src="{% static 'images/primer.webp' %}" alt="Primer by ELF" class="product-image">
       <div class="product-info">
-          <h2 class="product-name">Primer by ELF</h2>
+          <h2 class="product-name">Power Grip  Gel Face Primer by ELF</h2>
           <p class="product-price">
               <span class="current-price">$13.00</span>
               <span class="original-price">$25.00</span>
@@ -75,11 +74,11 @@
       </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-cards">
     <div class="discount">-5%</div>
     <img src="{% static 'images/foundation.webp' %}" alt="Foundation by Fenty Beauty" class="product-image">
     <div class="product-info">
-        <h2 class="product-name">Foundation by Fenty Beauty</h2>
+        <h2 class="product-name">Pro Filt'r Foundation by Fenty Beauty</h2>
         <p class="product-price">
             <span class="current-price">$38.00</span>
             <span class="original-price">$42.00</span>
@@ -88,11 +87,11 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-cards">
   <div class="discount">-5%</div>
   <img src="{% static 'images/concealer.webp' %}" alt="Concealer by NARS" class="product-image">
   <div class="product-info">
-      <h2 class="product-name">Concealer by NARS</h2>
+      <h2 class="product-name">Brightening Concealer by NARS</h2>
       <p class="product-price">
           <span class="current-price">$28.00</span>
           <span class="original-price">$32.00</span>
@@ -101,11 +100,11 @@
   </div>
 </div>
 
-<div class="product-card">
+<div class="product-cards">
   <div class="discount">-10%</div>
   <img src="{% static 'images/contour.webp' %}" alt="Contour by ELF" class="product-image">
   <div class="product-info">
-      <h2 class="product-name">Contour by ELF</h2>
+      <h2 class="product-name">Halo Glow Contour by ELF</h2>
       <p class="product-price">
           <span class="current-price">$13.00</span>
           <span class="original-price">$25.00</span>
@@ -114,11 +113,11 @@
   </div>
 </div>
 
-<div class="product-card">
+<div class="product-cards">
   <div class="discount">-5%</div>
   <img src="{% static 'images/blush.webp' %}" alt="Blush by Rare Beauty" class="product-image">
   <div class="product-info">
-      <h2 class="product-name">Blush by Rare Beauty</h2>
+      <h2 class="product-name"> Liquid Blush by Rare Beauty</h2>
       <p class="product-price">
           <span class="current-price">$23.75</span>
           <span class="original-price">$28.00</span>
@@ -127,7 +126,7 @@
   </div>
 </div>
 
-<div class="product-card">
+<div class="product-cards">
   <div class="discount">-10%</div>
   <img src="{% static 'images/settingspray.webp' %}" alt="Setting Spray by Urban Decay" class="product-image">
   <div class="product-info">
@@ -139,7 +138,8 @@
       <button class="add-to-cart">Add to cart</button>
   </div>
 </div>
-</section>
+      </section>
+<!--fund produktet-->
        <!--seksioni i ikonave-->
        <section class="icons-container">
         <div class="icons">
@@ -172,6 +172,7 @@
         </div>
        </section>
        <!--fund ikonash-->
+
 <!--reviewt-->
 <section class="review" id="review">
   <h1 class="heading">Costumer's <span>Review</span></h1>
@@ -187,8 +188,8 @@
       <p>Exciting makeup brand with a fantastic message!
         The products are really good quality and the pigment is insanely good! 
         The blushes will last you forever with that pigment as you only need a bit to have a glowing look.
-        I've never had a problem ordering from the brand or other external sites and I'm always happy with the products when I try them out!
-        Definitely would recommend it to anyone looking for a high quality makeup brand with crazy good pigment and stands for a positive message.</p>
+        Definitely would recommend it to anyone looking for a high quality makeup brand with
+         crazy good pigment and stands for a positive message.</p>
         <div class="user">
           <img src="{% static 'images/costumer1.webp' %}" alt="img">
           <div class="user-info">
