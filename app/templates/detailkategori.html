@@ -1,7 +1,7 @@
 {% extends 'index.html'%}
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/products.css' %}"> {% endblock %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
 
 {% block content %}
 <section class="tegjithaproduktet">
@@ -13,8 +13,6 @@
   </div>
   <div class="koleksioni">
     {% for product in  kategoriProducts %}
-    <!-- Kjo sillte problem -->
-    <!-- <div class="kontent"> -->
     <div class="product">
       <img src="{{product.product_image.url}}" alt="text">
       <h4>{{product.product_name }}</h4>
