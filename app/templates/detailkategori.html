@@ -16,8 +16,7 @@
     <div class="product">
       <img src="{{product.product_image.url}}" alt="text">
       <h4>{{product.product_name }}</h4>
-      <p>{{product.product_description}}</p>
-      <h6>{{product.product_price}}</h6>
+      <h6>${{product.product_price}}</h6>
       <ul>
         <li><i class="fa fa-star checked"></i></li>
         <li><i class="fa fa-star checked"></i></li>
@@ -25,7 +24,7 @@
         <li><i class="fa fa-star checked"></i></li>
         <li><i class="fa fa-star"></i></li>
       </ul>
-      <a href="{% url 'detailproductPage' product.pk %}" class="">Buy Now</a>
+      <a href="{% url 'detailproductPage' product.pk %}" class="button">Buy Now</a>
     </div>
     {% endfor %}
   </div>
