@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import *
 from django.contrib import messages
+from django.contrib.auth.models import User, auth
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -35,8 +37,8 @@ def contact(request):
             contact_description = comment
         ).save()
         messages.success(request, "Message sended!")
-    # else:
-    #     messages.error(request, "Message not sended!")
+        # else:
+        messages.error(request, "Message not sended!")
     context = {"kategories" : kategories}
     return render(request, 'contact.html', context)
 
@@ -53,3 +55,85 @@ def detailkategori(request, slug):
     kategoriProducts = Product.objects.filter(product_category=kategoriDetail)
     context = {"kategoriDetail": kategoriDetail, "kategories" : kategories, "kategoriProducts" : kategoriProducts}
     return render(request, 'detailkategori.html', context) 
+
+# Auth
+# Funksioni i regjistrimit
+def register(request):
+    categories = Kategori.objects.all()
+    context = {"cat": categories}
+    # Marrja e informacioneve
+    if request.method == "POST":
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        confirm_password = request.POST["confirm_password"]
+        # Kontrollohet nese passwordet jane te njejte
+        if (
+            first_name == ""
+            and last_name == ""
+            and username == ""
+            and email == ""
+            and password == ""
+            and confirm_password == ""
+        ):
+            return redirect("register")
+        else:
+            if password == confirm_password:
+                # Kontrollohet nese useri eshte regjistruar me pare
+                if User.objects.filter(username=username).exists():
+                    # nese po behet rifresh faqja e regjister
+                    return redirect("/")
+                else:
+                    # Krijohet nje user i ri
+                    user = User.objects.create_user(
+                        email=email,
+                        username=username,
+                        password=password,
+                        first_name=first_name,
+                        last_name=last_name,
+                    )
+                    user.set_password(password)
+                    # Ruhet useri
+                    user.save()
+                    # kalon tek faqja e login
+                    return redirect("../login/")
+    else:
+        return render(request, "auth/register.html", context)
+
+
+def login(request):
+    categories = Kategori.objects.all()
+    context = {"kategories": kategories}
+    # marrja e te dhenave nga forma
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        # Kontrollo i te dhenave
+        user = auth.authenticate(username=username, password=password)
+        # Nese logohet kalon tek faqja e home
+        if user is not None:
+            # metode e djangos
+            auth.login(request, user)
+            return redirect("/")
+        else:
+            # nese nuk perputhen informacionet behet refresh faqja
+            return redirect("login/")
+    else:
+        return render(request, "auth/login.html", context)
+
+
+# funksioni i logout
+def logout(request):
+    # metode e django-s
+    auth.logout(request)
+    return redirect("/")
+
+
+# Nuk e akseson faqen nese nuk je i log-uar
+@login_required(login_url="/login/")
+def accessLogin(request):
+    categories = Kategori.objects.all()
+    context = {"kategories": kategories}
+    return render(request, "accessLogin.html", context)

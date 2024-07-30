@@ -20,11 +20,29 @@
 
     {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} {% if message.tags == 'error'%} btn-danger-subtle text-emphasis-danger {% endif %}" role="alert">
-        {{ message }}
+    <div class="alert sms alert-{{message.tags}}{% if message.tags == 'error' %} bg-danger-subtle text-emphasis-danger {% endif %}"
+     role="alert">
+        {{message}}
     </div>
     {% endfor %}
 
+   <!-- <div class="container mt-5 ">
+
+    
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert sms alert-{{message.tags}}{% if message.tag == 'error' %} bg-danger-subtle text-emphasis-danger {% endif %}"
+            role="alert">
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}-->
+    </div>
+    <div class="container">
+        {% for contact in contacts %}
+        <p>{{contact.formContact_name}} {{contact.formContact_surname}}</p>
+        {% endfor %}
+    </div>
    
    
 

@@ -13,8 +13,6 @@
   </div>
   <div class="koleksioni">
     {% for product in products %}
-    <!-- Kjo sillte problem -->
-    <!-- <div class="kontent"> -->
     <div class="product">
       <img src="{{product.product_image.url}}" alt="text">
       <h4>{{product.product_name }}</h4>
@@ -24,7 +22,7 @@
         <li><i class="fa fa-star checked"></i></li>
         <li><i class="fa fa-star checked"></i></li>
         <li><i class="fa fa-star checked"></i></li>
-        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star checked"></i></li>
       </ul>
       <a href="{% url 'detailproductPage' product.pk %}" class="button">Buy Now</a>
     </div>

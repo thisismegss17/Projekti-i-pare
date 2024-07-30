@@ -30,3 +30,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.contact_name} {self.contact_surname}"
+
+class FormContact(models.Model):
+    formContact_name = models.CharField(max_length=250, null=True, blank=True)
+    formContact_surname = models.CharField(max_length=250, null=True, blank=True)
+    formContact_email = models.EmailField(null=True, blank=True)
+    formContact_comment = models.TextField(max_length=1000, null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.formContact_name} {self.formContact_surname}"
