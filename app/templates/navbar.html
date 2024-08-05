@@ -33,10 +33,24 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <div class="d-flex">
+          {% if request.user.is_authenticated %}
+          <div class="g-3">
+              <a class="btn btn-light" href="{% url 'logout' %}">Logout</a>
+
+              <a class="btn btn-light">Welcome, {{request.user.username}}</a>
+          </div>
+          {% else %}
+          <div class="g-3">
+              <a class="btn btn-light" href="{% url 'registerPage' %}">Register</a>
+              <a class="btn btn-light" href="{% url 'loginPage' %}">Login</a>
+          </div>
+          {% endif %}
+      </div>
+        <!--<form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button type="button" class="btn btn-light">Search</button>
-        </form>
+        </form>-->
       </div>
     </div>
   </nav>

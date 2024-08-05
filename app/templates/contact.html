@@ -4,16 +4,25 @@
 {% block content %}
     <!--nis forma-->
     <form class="mt-5 pt-5" method="POST">
+
         {% csrf_token %}
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" id="firstname" name="firstname">
+    </div>
+    <div class="mb-3">
         <label for="lastname" class="form-label">Last Name</label>
         <input type="text" class="form-control" id="lastname" name="lastname">
+    </div>
+    <div class="mb-3">
         <label for="email" class="form-label">E-mail Adress</label>
         <input type="email" class="form-control" id="email" name="email">
+    </div>  
+    <div  class="mb-3">
         <label for="comment" class="form-label">Comment</label>
-        <input type="text" class="form-control" id="comment" name="comment">
+        <textarea class="form-control" id="comment" rows="2" name="comment"></textarea>
+    </div>
+    <div>
         <input type="submit" value="Send" class="btn btn-success">
     </div>
     </form>
@@ -25,26 +34,7 @@
         {{message}}
     </div>
     {% endfor %}
-
-   <!-- <div class="container mt-5 ">
-
-    
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert sms alert-{{message.tags}}{% if message.tag == 'error' %} bg-danger-subtle text-emphasis-danger {% endif %}"
-            role="alert">
-            {{message}}
-        </div>
-        {% endfor %}
-        {% endif %}-->
+    {% endif %}
     </div>
-    <div class="container">
-        {% for contact in contacts %}
-        <p>{{contact.formContact_name}} {{contact.formContact_surname}}</p>
-        {% endfor %}
-    </div>
-   
-   
 
-{% endif %}
 {% endblock %}
