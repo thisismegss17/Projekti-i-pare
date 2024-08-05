@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -24,22 +24,23 @@ def products(request):
 
 def contact(request):
     kategories = Kategori.objects.all()
+    name = surname = email = comment = ""
     if request.method == "POST":
-        name_ = request.POST["firstname"]
+        name = request.POST["firstname"]
         surname = request.POST["lastname"]
         email = request.POST["email"]
         comment = request.POST["comment"]
-    # if name_ !="" and surname !="" and email !="" and comment !="" :
-        Contact(
-            contact_name= name_,
-            contact_surname = surname,
-            contact_email = email,
-            contact_description = comment
-        ).save()
-        messages.success(request, "Message sended!")
-        # else:
-        messages.error(request, "Message not sended!")
-    context = {"kategories" : kategories}
+    if name !="" and surname !="" and email !="" and comment != "" :
+            FormContact(
+                formContact_name = name,
+                formContact_surname = surname,
+                formContact_email = email,
+                formContact_comment = comment
+            ).save()
+            messages.success(request, 'Message sended!')
+    else:
+            messages.error(request, 'Message not sended!')
+    context = {"kategories": kategories}
     return render(request, 'contact.html', context)
 
 
@@ -59,8 +60,8 @@ def detailkategori(request, slug):
 # Auth
 # Funksioni i regjistrimit
 def register(request):
-    categories = Kategori.objects.all()
-    context = {"cat": categories}
+    kategories = Kategori.objects.all()
+    context = {"kat": kategories}
     # Marrja e informacioneve
     if request.method == "POST":
         first_name = request.POST["first_name"]
@@ -98,14 +99,14 @@ def register(request):
                     # Ruhet useri
                     user.save()
                     # kalon tek faqja e login
-                    return redirect("../login/")
+                    return redirect("login")
     else:
         return render(request, "auth/register.html", context)
 
 
 def login(request):
-    categories = Kategori.objects.all()
-    context = {"kategories": kategories}
+    kategories = Kategori.objects.all()
+    context = {"kategories" : kategories}
     # marrja e te dhenave nga forma
     if request.method == "POST":
         username = request.POST["username"]
@@ -116,7 +117,7 @@ def login(request):
         if user is not None:
             # metode e djangos
             auth.login(request, user)
-            return redirect("/")
+            return redirect("homePage")
         else:
             # nese nuk perputhen informacionet behet refresh faqja
             return redirect("login/")
@@ -128,12 +129,12 @@ def login(request):
 def logout(request):
     # metode e django-s
     auth.logout(request)
-    return redirect("/")
+    return redirect("homePage")
 
 
 # Nuk e akseson faqen nese nuk je i log-uar
 @login_required(login_url="/login/")
 def accessLogin(request):
-    categories = Kategori.objects.all()
+    kategories = Kategori.objects.all()
     context = {"kategories": kategories}
     return render(request, "accessLogin.html", context)
